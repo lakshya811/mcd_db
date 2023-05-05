@@ -1,7 +1,8 @@
 import java.sql.Connection;
 import java.sql.Statement;
 
-public class MenuItems {
+abstract public class Items
+{
     private String Item;
     private String per_serve_size;
     private float Energy_kCal;
@@ -12,7 +13,7 @@ public class MenuItems {
     private float TotalSugars_g;
     private int Price_Rs;
 
-    public MenuItems(String Item, String per_serve_size, float Energy_kCal,float Protein_g,float Cholesterol_g,float Carbohydrates_g,float TotalFats_g,float TotalSugars_g,int Price_Rs) {
+    public Items(String Item, String per_serve_size, float Energy_kCal,float Protein_g,float Cholesterol_g,float Carbohydrates_g,float TotalFats_g,float TotalSugars_g,int Price_Rs) {
         this.Item = Item;
         this.per_serve_size = per_serve_size;
         this.Energy_kCal = Energy_kCal;
@@ -24,10 +25,10 @@ public class MenuItems {
         this.Price_Rs = Price_Rs;
     }
 
-    public MenuItems(Connection conn) {
+    public Items(Connection conn) {
     }
 
-    public MenuItems(Statement stmt) {
+    public Items(Statement stmt) {
     }
 
     public String getItem() {
@@ -80,4 +81,7 @@ public class MenuItems {
                 ", price_rs=" + Price_Rs +
                 '}';
     }
+    abstract public void showHigh();
+    abstract public void showLow();
+    abstract public void showInfo();
 }
