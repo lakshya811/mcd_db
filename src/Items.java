@@ -1,8 +1,17 @@
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
+
 
 abstract public class Items
 {
+
+//    Statement stmt = conn.createStatement();
+//    Connection conn=
+    private Connection conn;
+    private Statement stmt;
+
     private String Item;
     private String per_serve_size;
     private float Energy_kCal;
@@ -69,7 +78,7 @@ abstract public class Items
 
     @Override
     public String toString() {
-        return "MenuItems{" +
+        return "Items{" +
                 "name='" + Item + '\'' +
                 ", perServeSize='" + per_serve_size + '\'' +
                 ", energy_kcal=" + Energy_kCal +
@@ -81,7 +90,53 @@ abstract public class Items
                 ", price_rs=" + Price_Rs +
                 '}';
     }
-    abstract public void showHigh();
-    abstract public void showLow();
-    abstract public void showInfo();
+    public void showHigh(String menu, String nutrient){
+        String sql = "SELECT * FROM "+menu+" ORDER BY " + nutrient + " ASC LIMIT 5;";
+        try {
+            ResultSet rs = stmt.executeQuery(sql);
+            System.out.println("Top 5 Breakfast items with highest " + nutrient + ":");
+            while (rs.next()) {
+                System.out.println(rs.getString("Item") + " - " + rs.getFloat(nutrient) + " " + nutrient);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
+
+    public void showLow(String menu, String nutrient){
+    String sql = "SELECT * FROM"+ menu+" ORDER BY " + nutrient + " asc LIMIT 5;";
+    try {
+        ResultSet rs = stmt.executeQuery(sql);
+        System.out.println("Top 5 Breakfast items with lowest " + nutrient + ":");
+        while (rs.next()) {
+            System.out.println(rs.getString("Item") + " - " + rs.getFloat(nutrient) + " " + nutrient);
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+}
+    public void showInfo(String menu, String menuItemName){
+        String sql = "SELECT * FROM "+ menu+" WHERE Item = '" + menuItemName + "'";
+        try {
+            ResultSet rs = stmt.executeQuery(sql);
+            if (rs.next()) {
+                System.out.println("Name: " + rs.getString("Item"));
+                System.out.println("Per serve amount: " + rs.getString("per_serve_size"));
+                System.out.println("Calories: " + rs.getFloat("Energy_kCal"));
+                System.out.println("Protein: " + rs.getFloat("Protein_g"));
+                System.out.println("Cholesterol: " + rs.getFloat("Cholesterol_g"));
+                System.out.println("Carbs: " + rs.getFloat("Carbohydrates_g"));
+                System.out.println("Fats: " + rs.getFloat("TotalFats_g"));
+                System.out.println("Sugars: " + rs.getFloat("TotalSugars_g"));
+                System.out.println("Price: " + rs.getInt("Price_Rs"));
+            } else {
+                System.out.println("Menu item not found!");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

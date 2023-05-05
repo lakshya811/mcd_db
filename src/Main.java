@@ -20,33 +20,39 @@ public class Main {
             Scanner scanner1 = new Scanner(System.in);
             System.out.print("Enter nutrient to search for (energy_kcal/protein_g/cholesterol_g/carbohydrates_g/totalfats_g/totalsugars_g): ");
             String nutrient = scanner1.nextLine();
-//            System.out.print("Enter menu item to get more information: ");
-            String menuItemName = scanner.nextLine();
+            Scanner scanner2 = new Scanner(System.in);
+            System.out.print("Enter menu item to get more information: ");
+            String menuItemName = scanner2.nextLine();
             try{
-                if (menu=="breakfast_menu") {
+                if (menu.equals("breakfast_menu")) {
                     BreakfastMenu breakfastmenu = new BreakfastMenu(conn);
-                    breakfastmenu.showTopItems(nutrient);
-                    breakfastmenu.showItemInfo(menuItemName);
+                    breakfastmenu.showHigh(menu, nutrient);
+                    breakfastmenu.showLow(menu, nutrient);
+//                    breakfastmenu.showInfo(menuItemName);
                 }
-                else if (menu=="condiments_menu"){
+                else if (menu.equals("condiments_menu")){
                     CondimentsMenu condimentsmenu = new CondimentsMenu(conn);
-                    condimentsmenu.showTopItems(nutrient);
-                    condimentsmenu.showItemInfo(menuItemName);
+                    condimentsmenu.showHigh(menu, nutrient);
+                    condimentsmenu.showLow(menu, nutrient);
+//                    condimentsmenu.showInfo(menuItemName);
                 }
-                else if (menu=="gourmet_menu"){
+                else if (menu.equals("gourmet_menu")){
                     GourmetMenu gourmetmenu = new GourmetMenu(conn);
-                    gourmetmenu.showTopItems(nutrient);
-                    gourmetmenu.showItemInfo(menuItemName);
+                    gourmetmenu.showHigh(menu,nutrient);
+                    gourmetmenu.showLow(menu,nutrient);
+//                    gourmetmenu.showInfo(menuItemName);
                 }
-                else if (menu=="mc_cafe_menu"){
+                else if (menu.equals("mc_cafe_menu")){
                     McCafeMenu mccafemenu = new McCafeMenu(conn);
-                    mccafemenu.showTopItems(nutrient);
-                    mccafemenu.showItemInfo(menuItemName);
+                    mccafemenu.showHigh(menu,nutrient);
+                    mccafemenu.showLow(menu,nutrient);
+//                    mccafemenu.showInfo(menuItemName);
                 }
-                else if (menu=="regular_menu"){
+                else if (menu.equals("regular_menu")){
                     RegularMenu regularmenu = new RegularMenu(conn);
-                    regularmenu.showTopItems(nutrient);
-                    regularmenu.showItemInfo(menuItemName);
+                    regularmenu.showHigh(menu,nutrient);
+                    regularmenu.showLow(menu,nutrient);
+//                    regularmenu.showInfo(menuItemName);
                 }
             } catch (Exception e){
                 System.out.println("Wrong Menu input");
