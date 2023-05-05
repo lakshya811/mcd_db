@@ -119,7 +119,7 @@ abstract public class Items
     }
 }
     public void showInfo(String menu, String menuItemName){
-        String sql = "SELECT * FROM "+ menu+" WHERE Item = '" + menuItemName + "'";
+        String sql = "SELECT * FROM "+ menu +" WHERE Item = '" + menuItemName + "'";
         try {
             ResultSet rs = stmt.executeQuery(sql);
             if (rs.next()) {

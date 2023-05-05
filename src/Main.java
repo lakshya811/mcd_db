@@ -20,39 +20,52 @@ public class Main {
             Scanner scanner1 = new Scanner(System.in);
             System.out.print("Enter nutrient to search for (energy_kcal/protein_g/cholesterol_g/carbohydrates_g/totalfats_g/totalsugars_g): ");
             String nutrient = scanner1.nextLine();
-            Scanner scanner2 = new Scanner(System.in);
-            System.out.print("Enter menu item to get more information: ");
-            String menuItemName = scanner2.nextLine();
+
             try{
                 if (menu.equals("breakfast_menu")) {
                     BreakfastMenu breakfastmenu = new BreakfastMenu(conn);
                     breakfastmenu.showHigh(menu, nutrient);
                     breakfastmenu.showLow(menu, nutrient);
-//                    breakfastmenu.showInfo(menuItemName);
+                    Scanner scanner2 = new Scanner(System.in);
+                    System.out.print("Enter menu item to get more information: ");
+                    String menuItemName = scanner2.nextLine();
+                    breakfastmenu.showInfo(menu, menuItemName);
                 }
                 else if (menu.equals("condiments_menu")){
                     CondimentsMenu condimentsmenu = new CondimentsMenu(conn);
                     condimentsmenu.showHigh(menu, nutrient);
                     condimentsmenu.showLow(menu, nutrient);
-//                    condimentsmenu.showInfo(menuItemName);
+                    Scanner scanner2 = new Scanner(System.in);
+                    System.out.print("Enter menu item to get more information: ");
+                    String menuItemName = scanner2.nextLine();
+                    condimentsmenu.showInfo(menu, menuItemName);
                 }
                 else if (menu.equals("gourmet_menu")){
                     GourmetMenu gourmetmenu = new GourmetMenu(conn);
                     gourmetmenu.showHigh(menu,nutrient);
                     gourmetmenu.showLow(menu,nutrient);
-//                    gourmetmenu.showInfo(menuItemName);
+                    Scanner scanner2 = new Scanner(System.in);
+                    System.out.print("Enter menu item to get more information: ");
+                    String menuItemName = scanner2.nextLine();
+                    gourmetmenu.showInfo(menu, menuItemName);
                 }
                 else if (menu.equals("mc_cafe_menu")){
                     McCafeMenu mccafemenu = new McCafeMenu(conn);
                     mccafemenu.showHigh(menu,nutrient);
                     mccafemenu.showLow(menu,nutrient);
-//                    mccafemenu.showInfo(menuItemName);
+                    Scanner scanner2 = new Scanner(System.in);
+                    System.out.print("Enter menu item to get more information: ");
+                    String menuItemName = scanner2.nextLine();
+                    mccafemenu.showInfo(menu, menuItemName);
                 }
                 else if (menu.equals("regular_menu")){
                     RegularMenu regularmenu = new RegularMenu(conn);
                     regularmenu.showHigh(menu,nutrient);
                     regularmenu.showLow(menu,nutrient);
-//                    regularmenu.showInfo(menuItemName);
+                    Scanner scanner2 = new Scanner(System.in);
+                    System.out.print("Enter menu item to get more information: ");
+                    String menuItemName = scanner2.nextLine();
+                    regularmenu.showInfo(menu, menuItemName);
                 }
             } catch (Exception e){
                 System.out.println("Wrong Menu input");
