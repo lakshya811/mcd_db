@@ -5,14 +5,14 @@ public class regularInsert extends dbImport{
     static final String USER = "root";
     static final String PASS = "";
     public static void main (String []args) throws SQLException, ClassNotFoundException {
-        Connection conn1=null;
+        Connection conn=null;
         Statement stmt1= null;
         String sql1=null;
         String sql_create=null;
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            conn1 = DriverManager.getConnection(DB_URL, USER, PASS);
-            stmt1 = conn1.createStatement();
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt1 = conn.createStatement();
 
 //            String sql = "CREATE DATABASE mcd";
 //            stmt.executeUpdate(sql);
@@ -78,19 +78,19 @@ public class regularInsert extends dbImport{
         finally{
             try{
                 if(sql1!=null)
-                    conn1.close();
+                    conn.close();
             }
             catch(SQLException se){ // do nothing
             }
             try{
-                if(conn1!=null)
-                    conn1.close();
+                if(conn!=null)
+                    conn.close();
             }catch(SQLException se){
                 se.printStackTrace(); }
             //end finally try }//end try System.out.println(&quot;Goodbye!&quot;);
         }
         stmt1.close();
-        conn1.close();
+        conn.close();
     }
 
 }

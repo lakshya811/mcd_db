@@ -20,20 +20,20 @@ public abstract class dbImport {
 //            String sql = "CREATE DATABASE mcd";
 //            stmt.executeUpdate(sql);
             System.out.println("Database opened successfully...");
-             sql ="CREATE TABLE menu_items"+
-                    "(id INT AUTO_INCREMENT primary key NOT NULL,"+
-                    "Menu_Category varchar(255) NOT NULL,"+
-                    "Item varchar(255) NOT NULL,"+
-                    "per_serve_size varchar(255) NOT NULL,"+
-                    "Energy_kCal DECIMAL(5,2) NOT NULL,"+
-                    "Protein_g DECIMAL(5,2) NOT NULL,"+
-                    "Cholesterol_g DECIMAL(5,2) NOT NULL,"+
-                    "Carbohydrates_g DECIMAL(5,2) NOT NULL,"+
-                    "TotalFats_g DECIMAL(5,2) NOT NULL,"+
-                    "TotalSugars_g DECIMAL(5,2) NOT NULL,"+
-                    "Price_Rs INTEGER NOT NULL)";
-            stmt.executeUpdate(sql);
-            System.out.println("Table menu_items created");
+//             sql ="CREATE TABLE menu_items"+
+//                    "(id INT AUTO_INCREMENT primary key NOT NULL,"+
+//                    "Menu_Category varchar(255) NOT NULL,"+
+//                    "Item varchar(255) NOT NULL,"+
+//                    "per_serve_size varchar(255) NOT NULL,"+
+//                    "Energy_kCal DECIMAL(5,2) NOT NULL,"+
+//                    "Protein_g DECIMAL(5,2) NOT NULL,"+
+//                    "Cholesterol_g DECIMAL(5,2) NOT NULL,"+
+//                    "Carbohydrates_g DECIMAL(5,2) NOT NULL,"+
+//                    "TotalFats_g DECIMAL(5,2) NOT NULL,"+
+//                    "TotalSugars_g DECIMAL(5,2) NOT NULL,"+
+//                    "Price_Rs INTEGER NOT NULL)";
+//            stmt.executeUpdate(sql);
+//            System.out.println("Table menu_items created");
 
         }
         catch (SQLException e) {
@@ -43,12 +43,12 @@ public abstract class dbImport {
             se.printStackTrace(); //Handle errors for JDBC
         }
         finally{
-            try{
-                if(sql!=null)
-                    conn.close();
-            }
-            catch(SQLException se){ // do nothing
-            }
+//            try{
+//                if(sql!=null)
+//                    conn.close();
+//            }
+//            catch(SQLException se){ // do nothing
+//            }
             try{
                 if(conn!=null)
                     conn.close();
