@@ -64,7 +64,7 @@ public class regularInsert {
                     "('L1 Coffee','200 ml',6.8,0,0,0,1.7,0,313),"+
                     "('L1 Coffee with milk','205 ml',35.8,1,2,6,1.6,3.45,310),"+
                     "('Double Chocochips Muffin','80 g',341.68,5.13,17.28,15.96,40.13,29.44,272),"+
-                    "('Vanilla Chocochips Muffin','80 g',329.29,4.48,15.46,78.52,40.13,29.6,211),";
+                    "('Vanilla Chocochips Muffin','80 g',329.29,4.48,15.46,78.52,40.13,29.6,211)";
             stmt1.executeUpdate(sql_create);
             stmt1.executeUpdate(sql1);
             System.out.println("Table regular_menu created");

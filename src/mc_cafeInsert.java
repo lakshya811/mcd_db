@@ -79,7 +79,7 @@ public class mc_cafeInsert {
                     "('Regular Soft Serve: Brownie with Hot Fudge','110.79 g',205.26,3.2,5.45,6.04,35.26,20.75,390),"+
                     "('Medium Soft Serve: Brownie with Hot Fudge','155.08 g',311.39,4.65,7.46,7.78,55.24,27.94,395),"+
                     "('Regular Blackforest','125.79 g',237.89,3.22,5.47,6.19,43.42,27.79,239),"+
-                    "('Medium Blackforest','200.08 g',429.95,5.42,9.76,9.23,79.04,48.45,397),";
+                    "('Medium Blackforest','200.08 g',429.95,5.42,9.76,9.23,79.04,48.45,397)";
             stmt.executeUpdate(sql_create);
             stmt.executeUpdate(sql);
             System.out.println("Table mc_cafe_menu created");

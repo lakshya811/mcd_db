@@ -17,9 +17,9 @@ public class condimentsInsert {
 //            String sql = "CREATE DATABASE mcd";
 //            stmt.executeUpdate(sql);
 //            System.out.println("Database opened successfully...");
-            sql_create="CREATE TABLE condiments_menu"+
+            sql_create="CREATE TABLE condiment_menu"+
                     "(id INT AUTO_INCREMENT primary key NOT NULL,"+
-                    "Menu_Items varchar(255) NOT NULL,"+
+                    "Item varchar(255) NOT NULL,"+
                     "per_serve_size varchar(255) NOT NULL,"+
                     "Energy_kCal DECIMAL(5,2) NOT NULL,"+
                     "Protein_g DECIMAL(5,2) NOT NULL,"+
@@ -28,7 +28,7 @@ public class condimentsInsert {
                     "TotalFats_g DECIMAL(5,2) NOT NULL,"+
                     "TotalSugars_g DECIMAL(5,2) NOT NULL,"+
                     "Price_Rs INTEGER NOT NULL)";
-            sql = "INSERT INTO condiment_menu (Menu_Items,per_serve_size, Energy_kCal, Protein_g, TotalFats_g,Cholesterol_g,Carbohydrates_g,TotalSugars_g,Price_Rs)"+
+            sql = "INSERT INTO condiment_menu (Item,per_serve_size, Energy_kCal, Protein_g, TotalFats_g,Cholesterol_g,Carbohydrates_g,TotalSugars_g,Price_Rs)"+
                     "VALUES ('Mustard diping sauce','25 g',81.18,0.52,5.57,0.29,7.24,6.66,262),"+
                     "('BBQ diping sauce','25 g',54.89,0.26,0.49,0.25,12.36,7.65,338),"+
                     "('Chilli Sauce','10 g',8.07,0.03,0.01,0.1,1.99,1.53,368),"+

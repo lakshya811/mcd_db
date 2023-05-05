@@ -39,7 +39,7 @@ public class gourmetInsert {
                     "('Piri piri Mc Spicy Chicken Burger','228 g',443.4,25.63,17.3,64.19,43.29,9.29,286),"+
                     "('Piri piri Mc Spicy Veg Burger','211 g',517.98,11.97,24.53,8.1,58.87,12.87,204),"+
                     "('Cheesy Veg Nuggets (6pc)','90 g',252.29,8.48,13.09,20.03,23.6,1.31,234),"+
-                    "('Cheesy Veg Nuggets (9pc)','135 g',378.43,12.72,19.63,30.05,35.4,1.96,320),";
+                    "('Cheesy Veg Nuggets (9pc)','135 g',378.43,12.72,19.63,30.05,35.4,1.96,320)";
             stmt.executeUpdate(sql_create);
             stmt.executeUpdate(sql);
             System.out.println("Table gourmet_menu created");
