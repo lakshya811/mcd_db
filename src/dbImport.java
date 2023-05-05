@@ -3,12 +3,12 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class dbImport {
+public abstract class dbImport {
     static final String DB_URL = "jdbc:mysql://localhost/mcd";
     static final String USER = "root";
     static final String PASS = "";
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
         // Open a connection
         Connection conn=null;
         Statement stmt=null;

@@ -1,5 +1,5 @@
 import java.sql.*;
-public class regularInsert {
+public class regularInsert extends dbImport{
     static final String JDBC_Driver = "com.mysql.jdbc.Driver";
     static final String DB_URL="jdbc:mysql://localhost/mcd";
     static final String USER = "root";
