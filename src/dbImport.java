@@ -53,7 +53,8 @@ public class dbImport {
                 if(conn!=null)
                     conn.close();
             }catch(SQLException se){
-                se.printStackTrace(); }//end finally try }//end try System.out.println(&quot;Goodbye!&quot;);
+                se.printStackTrace(); }
+            //end finally try }//end try System.out.println(&quot;Goodbye!&quot;);
         }
         }
     }
