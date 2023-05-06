@@ -1,15 +1,17 @@
 import java.sql.*;
 
-public class CondimentsMenu extends Items {
+public class CondimentsMenu extends Items implements Top_items, Low_items, Item_info {
+    //    private Connection conn;
     private Statement stmt;
-    private Connection conn;
     private String nutrient;
     private String menuItemName;
+    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/mcd", "root", "");
+
 
     public CondimentsMenu(Connection conn) throws SQLException {
         super(conn);
         this.conn = conn;
-        stmt = conn.createStatement();
+        this.stmt = conn.createStatement();
     }
 
     public void setNutrient(String nutrient) {
@@ -19,4 +21,21 @@ public class CondimentsMenu extends Items {
     public void setMenuItemName(String menuItemName) {
         this.menuItemName = menuItemName;
     }
+
+    @Override
+    public void showInfo() {
+
+    }
+
+    @Override
+    public void showLow() {
+
+    }
+
+    @Override
+    public void showTop() {
+
+    }
+
+
 }

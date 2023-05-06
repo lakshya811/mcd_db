@@ -19,7 +19,7 @@ public class gourmetInsert {
 //            System.out.println("Database opened successfully...");
             sql_create="CREATE TABLE gourmet_menu"+
                     "(id INT AUTO_INCREMENT primary key NOT NULL,"+
-                    "Menu_Items varchar(255) NOT NULL,"+
+                    "Item varchar(255) NOT NULL,"+
                     "per_serve_size varchar(255) NOT NULL,"+
                     "Energy_kCal DECIMAL(5,2) NOT NULL,"+
                     "Protein_g DECIMAL(5,2) NOT NULL,"+
@@ -28,7 +28,7 @@ public class gourmetInsert {
                     "TotalFats_g DECIMAL(5,2) NOT NULL,"+
                     "TotalSugars_g DECIMAL(5,2) NOT NULL,"+
                     "Price_Rs INTEGER NOT NULL)";
-            sql = "INSERT INTO gourmet_menu (Menu_Items,per_serve_size, Energy_kCal, Protein_g, TotalFats_g,Cholesterol_g,Carbohydrates_g,TotalSugars_g,Price_Rs)"+
+            sql = "INSERT INTO gourmet_menu (Item,per_serve_size, Energy_kCal, Protein_g, TotalFats_g,Cholesterol_g,Carbohydrates_g,TotalSugars_g,Price_Rs)"+
                     "VALUES ('American Triple Cheese Chicken','195 g',457.94,24.43,22.65,71.23,37.45,7.64,400),"+
                     "('American Triple Cheese Veg','207 g',524.69,19.54,23.16,48.74,56.24,7.9,313),"+
                     "('Cheese Lava Burger','240 g',671.06,14.99,33.48,33.21,74.25,16.27,298),"+

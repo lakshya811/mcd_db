@@ -19,7 +19,7 @@ public class mc_cafeInsert {
 //            System.out.println("Database opened successfully...");
             sql_create="CREATE TABLE mc_cafe_menu"+
                     "(id INT AUTO_INCREMENT primary key NOT NULL,"+
-                    "Menu_Items varchar(255) NOT NULL,"+
+                    "Item varchar(255) NOT NULL,"+
                     "per_serve_size varchar(255) NOT NULL,"+
                     "Energy_kCal DECIMAL(5,2) NOT NULL,"+
                     "Protein_g DECIMAL(5,2) NOT NULL,"+
@@ -28,7 +28,7 @@ public class mc_cafeInsert {
                     "TotalFats_g DECIMAL(5,2) NOT NULL,"+
                     "TotalSugars_g DECIMAL(5,2) NOT NULL,"+
                     "Price_Rs INTEGER NOT NULL)";
-            sql = "INSERT INTO mc_cafe_menu (Menu_Items,per_serve_size, Energy_kCal, Protein_g, TotalFats_g,Cholesterol_g,Carbohydrates_g,TotalSugars_g,Price_Rs)"+
+            sql = "INSERT INTO mc_cafe_menu (Item,per_serve_size, Energy_kCal, Protein_g, TotalFats_g,Cholesterol_g,Carbohydrates_g,TotalSugars_g,Price_Rs)"+
                     "VALUES ('Cappuccino (L)','355 ml',219.36,10.51,12.03,36.55,19.81,14.45,336),"+
                     "('Latte (S)','236.5 ml',147.72,7.12,8.41,25.47,12.71,10.06,279),"+
                     "('Latte (R)','307.5 ml',190.03,9.1,10.42,31.68,17.15,12.52,352),"+
