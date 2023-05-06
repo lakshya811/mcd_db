@@ -94,7 +94,7 @@ abstract public class Items
         String sql = "SELECT * FROM "+menu+" ORDER BY " + nutrient + " ASC LIMIT 5;";
         try {
             ResultSet rs = stmt.executeQuery(sql);
-            System.out.println("Top 5 Breakfast items with highest " + nutrient + ":");
+            System.out.println("Top 5 "+menu+"  items with highest " + nutrient + ":");
             while (rs.next()) {
                 System.out.println(rs.getString("Item") + " - " + rs.getFloat(nutrient) + " " + nutrient);
             }
@@ -110,7 +110,7 @@ abstract public class Items
     String sql = "SELECT * FROM"+ menu+" ORDER BY " + nutrient + " asc LIMIT 5;";
     try {
         ResultSet rs = stmt.executeQuery(sql);
-        System.out.println("Top 5 Breakfast items with lowest " + nutrient + ":");
+        System.out.println("Top 5"+menu+" items with lowest " + nutrient + ":");
         while (rs.next()) {
             System.out.println(rs.getString("Item") + " - " + rs.getFloat(nutrient) + " " + nutrient);
         }

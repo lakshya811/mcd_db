@@ -1,15 +1,17 @@
 import java.sql.*;
 
 public class BreakfastMenu extends Items {
-    private Connection conn;
+//    private Connection conn;
     private Statement stmt;
     private String nutrient;
     private String menuItemName;
+    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/mcd", "root", "");
+
 
     public BreakfastMenu(Connection conn) throws SQLException {
         super(conn);
         this.conn = conn;
-        stmt = conn.createStatement();
+        this.stmt = conn.createStatement();
     }
 
     public void setNutrient(String nutrient) {
