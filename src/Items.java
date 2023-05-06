@@ -4,13 +4,20 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 
-abstract public class Items
-{
-
-//    Statement stmt = conn.createStatement();
-//    Connection conn=
+abstract public class Items {
     private Connection conn;
     private Statement stmt;
+    private String nutrient;
+    private String menuItemName;
+
+    public Items(Connection conn) throws SQLException {
+//        super(conn);
+        this.conn = conn;
+        stmt = conn.createStatement();
+    }
+
+//    private Connection conn;
+//    private Statement stmt;
 
     private String Item;
     private String per_serve_size;
@@ -34,11 +41,6 @@ abstract public class Items
         this.Price_Rs = Price_Rs;
     }
 
-    public Items(Connection conn) {
-    }
-
-    public Items(Statement stmt) {
-    }
 
     public String getItem() {
         return Item;
@@ -91,10 +93,11 @@ abstract public class Items
                 '}';
     }
     public void showHigh(String menu, String nutrient){
-        String sql = "SELECT * FROM "+menu+" ORDER BY " + nutrient + " ASC LIMIT 5;";
+        String sql = "SELECT * FROM "+menu+" ORDER BY " + nutrient + " DESC LIMIT 5;";
         try {
-            ResultSet rs = stmt.executeQuery(sql);
+
             System.out.println("Top 5 "+menu+"  items with highest " + nutrient + ":");
+            ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
                 System.out.println(rs.getString("Item") + " - " + rs.getFloat(nutrient) + " " + nutrient);
             }
@@ -107,16 +110,17 @@ abstract public class Items
 
 
     public void showLow(String menu, String nutrient){
-    String sql = "SELECT * FROM"+ menu+" ORDER BY " + nutrient + " asc LIMIT 5;";
-    try {
-        ResultSet rs = stmt.executeQuery(sql);
-        System.out.println("Top 5"+menu+" items with lowest " + nutrient + ":");
-        while (rs.next()) {
-            System.out.println(rs.getString("Item") + " - " + rs.getFloat(nutrient) + " " + nutrient);
+        String sql = "SELECT * FROM "+menu+" ORDER BY " + nutrient + " ASC LIMIT 5;";
+        try {
+
+            System.out.println("Top 5 "+menu+"  items with lowest " + nutrient + ":");
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                System.out.println(rs.getString("Item") + " - " + rs.getFloat(nutrient) + " " + nutrient);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-    } catch (SQLException e) {
-        e.printStackTrace();
-    }
 }
     public void showInfo(String menu, String menuItemName){
         String sql = "SELECT * FROM "+ menu +" WHERE Item = '" + menuItemName + "'";
